@@ -10,5 +10,21 @@ public class AssignmentOne {
             this.name = "";
             this.department= "";
         }
+
+        public HealthProfessional(int ID, String name, String department){
+            this.ID = ID;
+            this.name = name;
+            this.department = department;
+        }
+
+        public void printDetails() {
+            System.out.println("ID: " + ID);
+            System.out.println("Name: " + name);
+            System.out.println("Department: " + department);
+        }
+
+        public int getID() {
+            return ID;
+        }
     }
 }
