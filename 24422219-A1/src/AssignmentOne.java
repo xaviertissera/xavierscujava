@@ -69,7 +69,7 @@ public class AssignmentOne {
 
         @Override
         public void printDetails() {
-            System.out.println("The doctor details are:");
+            System.out.println("--The doctor details are:--");
             super.printDetails();
             System.out.println("Health Professional Type: General Practitioner");
             System.out.println("Clinic Name: " + clinicName);
@@ -99,11 +99,46 @@ public class AssignmentOne {
 
         @Override
         public void printDetails() {
-            System.out.println("The doctor details are:");
+            System.out.println("--The doctor details are:--");
             super.printDetails();
             System.out.println("Health Professional Type: Cardiologist");
             System.out.println("Hospital Name: " + hospitalName);
         }
+
+
+
+    }
+
+    //part 4 - appointment class
+    public static class Appointment {
+        private String patientName;
+        private String mobilePhone;
+        private String preferredTimeSlot;
+        private HealthProfessional selectedDoctor;
+
+        public Appointment() {
+            this.patientName = "default";
+            this.mobilePhone = "default";
+            this.preferredTimeSlot = "00:00";
+            this.selectedDoctor = null;
+        }
+
+        public String getPatientName() {
+            return patientName;
+        }
+
+        public void setPatientName(String patientName) {
+            this.patientName = patientName;
+        }
+
+        public String getMobilePhone() {
+            return mobilePhone;
+        }
+
+        public void setMobilePhone(String mobilePhone) {
+            this.mobilePhone = mobilePhone;
+        }
+
 
 
 
@@ -116,20 +151,21 @@ public class AssignmentOne {
 
 
     public static void main(String[] args) {
-        HealthProfessional hp1 = new HealthProfessional();
-        hp1.printDetails();
 
-        HealthProfessional hp2 = new HealthProfessional(244233, "Dr. Xavier Tissera", "Cardiology");
-        hp2.printDetails();
+        // Part 3 – Using classes and objects
 
-        GeneralPractitioner gp1 = new GeneralPractitioner();
+        // three objects of General Practitioners
+        GeneralPractitioner gp1 = new GeneralPractitioner(101, "Dr. Ashly Young", "General Medicine", "Clayton Clinic");
+
+        // objects of Cardiologists
+        Cardiologist c1 = new Cardiologist(201, "Dr. Vini Anderson", "Cardiology", "Monash Heart Hospital");
+        // print health professionals
         gp1.printDetails();
+        System.out.println("------------------------------");
 
-        GeneralPractitioner gp2 = new GeneralPractitioner(244567, "Dr. Xavier T", "General Medicine", "Clayton Clinic");
-        gp2.printDetails();
-
-        Cardiologist c1 = new Cardiologist();
         c1.printDetails();
+        System.out.println("------------------------------");
+
 
 
 
