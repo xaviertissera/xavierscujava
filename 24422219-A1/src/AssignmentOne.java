@@ -205,6 +205,23 @@ public class AssignmentOne {
         }
     }
 
+    // method to cancel a booking using mobile phone
+    public static void cancelBooking(List<Appointment> appointments, String mobilePhone) {
+        Appointment toRemove = null;
+        for (Appointment appointment : appointments) {
+            if (appointment.getMobilePhone().equals(mobilePhone)) {
+                toRemove = appointment;
+                break;
+            }
+        }
+        if (toRemove != null) {
+            appointments.remove(toRemove);
+            System.out.println("Appointment cancelled for mobile phone: " + mobilePhone);
+        } else {
+            System.out.println("Sorry, No appointment found under mobile phone: " + mobilePhone);
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -238,5 +255,10 @@ public class AssignmentOne {
         //Create new appointments
         createAppointment(appointments, "Roshali Obris", "0451064234", "08:00", gp1);
 
+        // Print appointments
+        System.out.println("--Existing Appointments:--");
+        printExistingAppointments(appointments);
+
+        
     }
 }
