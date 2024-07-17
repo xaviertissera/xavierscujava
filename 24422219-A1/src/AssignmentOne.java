@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class AssignmentOne {
 
     public static class HealthProfessional {
@@ -123,6 +126,15 @@ public class AssignmentOne {
             this.selectedDoctor = null;
         }
 
+        // constructor
+        public Appointment(String patientName, String mobilePhone, String preferredTimeSlot, HealthProfessional selectedDoctor) {
+            this.patientName = patientName;
+            this.mobilePhone = mobilePhone;
+            this.preferredTimeSlot = preferredTimeSlot;
+            this.selectedDoctor = selectedDoctor;
+        }
+
+        // Getters and setters
         public String getPatientName() {
             return patientName;
         }
@@ -139,13 +151,46 @@ public class AssignmentOne {
             this.mobilePhone = mobilePhone;
         }
 
+        public String getPreferredTimeSlot() {
+            return preferredTimeSlot;
+        }
+
+        public void setPreferredTimeSlot(String preferredTimeSlot) {
+            this.preferredTimeSlot = preferredTimeSlot;
+        }
+
+        public HealthProfessional getSelectedDoctor() {
+            return selectedDoctor;
+        }
+
+        public void setSelectedDoctor(HealthProfessional selectedDoctor) {
+            this.selectedDoctor = selectedDoctor;
+        }
+
+        // Method to print details
+        public void printDetails() {
+            System.out.println("Patient Name: " + patientName);
+            System.out.println("Mobile Phone: " + mobilePhone);
+            System.out.println("Preferred Time: " + preferredTimeSlot);
+            System.out.println("Selected Doctor:");
+            if (selectedDoctor != null) {
+                selectedDoctor.printDetails();
+            } else {
+                System.out.println("You haven't selected the doctor");
+            }
+        }
 
 
+    }
 
-
-
-
-
+    // Part 5 – Collection of appointments
+    public static void createAppointment(List<Appointment> appointments, String patientName, String mobilePhone, String preferredTimeSlot, HealthProfessional doctor) {
+        if (patientName != null && !patientName.isEmpty() && mobilePhone != null && !mobilePhone.isEmpty() && preferredTimeSlot != null && !preferredTimeSlot.isEmpty() && doctor != null) {
+            Appointment appointment = new Appointment(patientName, mobilePhone, preferredTimeSlot, doctor);
+            appointments.add(appointment);
+        } else {
+            System.out.println("Sorry! Appointment cannot be created. Please fill the missing information.");
+        }
     }
 
 
@@ -174,7 +219,12 @@ public class AssignmentOne {
         c2.printDetails();
         System.out.println("------------------------------");
 
+        // Part 5 – Collection of appointments
+        // Declare an ArrayList to store objects Appointment class
+        List<Appointment> appointments = new ArrayList<>();
 
+        //Create new appointments
+        createAppointment(appointments, "Roshali Obris", "0451064234", "08:00", gp1);
 
     }
 }
