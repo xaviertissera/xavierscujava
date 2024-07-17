@@ -193,6 +193,18 @@ public class AssignmentOne {
         }
     }
 
+    // printing existing appointments
+    public static void printExistingAppointments(List<Appointment> appointments) {
+        if (appointments.isEmpty()) {
+            System.out.println("Sorry! No existing appointments.");
+        } else {
+            for (Appointment appointment : appointments) {
+                appointment.printDetails();
+                System.out.println("------------------------------");
+            }
+        }
+    }
+
 
 
     public static void main(String[] args) {
