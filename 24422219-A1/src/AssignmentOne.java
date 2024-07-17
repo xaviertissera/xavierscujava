@@ -156,16 +156,23 @@ public class AssignmentOne {
 
         // three objects of General Practitioners
         GeneralPractitioner gp1 = new GeneralPractitioner(101, "Dr. Ashly Young", "General Medicine", "Clayton Clinic");
-
+        GeneralPractitioner gp2 = new GeneralPractitioner(102, "Dr. Lisa Collet", "General Medicine", "Ashburton Clinic");
+        GeneralPractitioner gp3 = new GeneralPractitioner(103, "Dr. Annie Mel", "Family Medicine", "Springvales Clinic");
         // objects of Cardiologists
         Cardiologist c1 = new Cardiologist(201, "Dr. Vini Anderson", "Cardiology", "Monash Heart Hospital");
+        Cardiologist c2 = new Cardiologist(202, "Dr. Emily Ross", "Cardiology", "Kingston Hospital");
         // print health professionals
         gp1.printDetails();
+        System.out.println("------------------------------");
+        gp2.printDetails();
+        System.out.println("------------------------------");
+        gp3.printDetails();
         System.out.println("------------------------------");
 
         c1.printDetails();
         System.out.println("------------------------------");
-
+        c2.printDetails();
+        System.out.println("------------------------------");
 
 
 
